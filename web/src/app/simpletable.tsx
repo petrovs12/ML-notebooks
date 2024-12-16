@@ -2,7 +2,7 @@ import React from 'react';
 
 interface TableProps {
     headers: string[];
-    data: any[];
+    data: { [key: string]: string }[];
 }
 
 const SimpleTable: React.FC<TableProps> = ({ 
