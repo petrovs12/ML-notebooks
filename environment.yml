@@ -1,5 +1,6 @@
-name: base
+name: /opt/anaconda3
 channels:
+  - conda-forge
   - defaults
   - https://repo.anaconda.com/pkgs/main
   - https://repo.anaconda.com/pkgs/r
@@ -88,7 +89,7 @@ dependencies:
   - colorama=0.4.6=py312hca03da5_0
   - colorcet=3.1.0=py312hca03da5_0
   - comm=0.2.1=py312hca03da5_0
-  - conda=24.11.1=py312hca03da5_0
+  - conda=24.9.2=py312h81bd7bf_0
   - conda-build=24.9.0=py312hca03da5_0
   - conda-content-trust=0.2.0=py312hca03da5_1
   - conda-index=0.5.0=py312hca03da5_0
@@ -167,7 +168,7 @@ dependencies:
   - iniconfig=1.1.1=pyhd3eb1b0_0
   - intake=2.0.7=py312hca03da5_0
   - intervaltree=3.1.0=pyhd3eb1b0_0
-  - ipykernel=6.28.0=py312hca03da5_0
+  - ipykernel=6.29.5=py312hca03da5_0
   - ipython=8.27.0=py312hca03da5_0
   - ipython_genutils=0.2.0=pyhd3eb1b0_1
   - ipywidgets=7.8.1=py312hca03da5_0
@@ -228,6 +229,7 @@ dependencies:
   - libedit=3.1.20230828=h80987f9_0
   - libev=4.33=h1a28f6b_1
   - libevent=2.1.12=h02f6b3c_1
+  - libexpat=2.6.3=hf9b8971_0
   - libffi=3.4.4=hca03da5_1
   - libgfortran=5.0.0=11_3_0_hca03da5_28
   - libgfortran5=11.3.0=h009349e_28
@@ -246,12 +248,14 @@ dependencies:
   - libsodium=1.0.18=h1a28f6b_0
   - libsolv=0.7.24=h514c7bf_1
   - libspatialindex=1.9.3=hc377ac9_0
+  - libsqlite=3.46.0=hfb93653_0
   - libssh2=1.11.0=h3e2b118_0
   - libthrift=0.15.0=h73c2103_2
   - libtiff=4.5.1=h313beb8_0
   - libwebp-base=1.3.2=h80987f9_0
   - libxml2=2.13.1=h0b34f26_2
   - libxslt=1.1.41=hf4d3faa_0
+  - libzlib=1.2.13=hfb2fe0b_6
   - libzopfli=1.0.3=hc377ac9_0
   - linkify-it-py=2.0.0=py312hca03da5_0
   - llvm-openmp=14.0.6=hc6e5704_0
@@ -261,7 +265,7 @@ dependencies:
   - lz4=4.3.2=py312h80987f9_0
   - lz4-c=1.9.4=h313beb8_1
   - lzo=2.10=h1a28f6b_2
-  - markdown=3.4.1=py312hca03da5_0
+  - marimo=0.9.14=py312h81bd7bf_0
   - markdown-it-py=2.2.0=py312hca03da5_1
   - markupsafe=2.1.3=py312h80987f9_0
   - matplotlib=3.9.2=py312hca03da5_1
@@ -280,6 +284,7 @@ dependencies:
   - mypy=1.11.2=py312h80987f9_0
   - mypy_extensions=1.0.0=py312hca03da5_0
   - mysql=5.7.24=ha71a6ea_2
+  - narwhals=1.12.1=pyhd8ed1ab_0
   - navigator-updater=0.5.1=py312hca03da5_0
   - nbclient=0.8.0=py312hca03da5_0
   - nbconvert=7.16.4=py312hca03da5_0
@@ -291,14 +296,13 @@ dependencies:
   - notebook=7.2.2=py312hca03da5_1
   - notebook-shim=0.2.3=py312hca03da5_0
   - numba=0.60.0=py312hd77ebd4_0
-  - numexpr=2.8.7=py312h0f3ea24_0
   - numpy=1.26.4=py312h7f4fdc5_0
   - numpy-base=1.26.4=py312he047099_0
   - numpydoc=1.7.0=py312hca03da5_0
   - oniguruma=6.9.7.1=h1a28f6b_0
   - openjpeg=2.5.2=h54b8e55_0
   - openpyxl=3.1.5=py312h80987f9_0
-  - openssl=3.0.15=h80987f9_0
+  - openssl=3.3.2=h8359307_0
   - orc=2.0.1=h937ddfc_0
   - overrides=7.4.0=py312hca03da5_0
   - packaging=24.1=py312hca03da5_0
@@ -321,14 +325,12 @@ dependencies:
   - pkginfo=1.10.0=py312hca03da5_0
   - platformdirs=3.10.0=py312hca03da5_0
   - plotly=5.24.1=py312h989b03a_0
-  - pluggy=1.0.0=py312hca03da5_1
   - ply=3.11=py312hca03da5_1
   - prometheus_client=0.14.1=py312hca03da5_0
   - prompt-toolkit=3.0.43=py312hca03da5_0
   - prompt_toolkit=3.0.43=hd3eb1b0_0
   - protego=0.1.16=py_0
   - protobuf=4.25.3=py312h8472c4a_0
-  - psutil=5.9.0=py312h80987f9_0
   - ptyprocess=0.7.0=pyhd3eb1b0_2
   - pure_eval=0.2.2=pyhd3eb1b0_0
   - py-cpuinfo=9.0.0=py312hca03da5_0
@@ -366,8 +368,7 @@ dependencies:
   - pyqtwebengine=5.15.10=py312h313beb8_0
   - pysocks=1.7.1=py312hca03da5_0
   - pytables=3.10.1=py312h905a39b_0
-  - pytest=7.4.4=py312hca03da5_0
-  - python=3.12.7=h99e199e_0
+  - python=3.12.2=hdf0ec26_0_cpython
   - python-dateutil=2.9.0post0=py312hca03da5_2
   - python-dotenv=0.21.0=py312hca03da5_0
   - python-fastjsonschema=2.16.2=py312hca03da5_0
@@ -380,6 +381,7 @@ dependencies:
   - python-slugify=5.0.2=pyhd3eb1b0_0
   - python-tzdata=2023.3=pyhd3eb1b0_0
   - python.app=3=py312h80987f9_1
+  - python_abi=3.12=5_cp312
   - pytoolconfig=1.2.6=py312hca03da5_0
   - pytorch=2.3.1=gpu_mps_py312h7b7e308_100
   - pytz=2024.1=py312hca03da5_0
@@ -464,7 +466,7 @@ dependencies:
   - tldextract=5.1.2=py312hca03da5_0
   - toml=0.10.2=pyhd3eb1b0_0
   - tomli=2.0.1=py312hca03da5_1
-  - tomlkit=0.11.1=py312hca03da5_0
+  - tomlkit=0.13.2=py312hca03da5_0
   - toolz=0.12.0=py312hca03da5_0
   - tornado=6.4.1=py312h80987f9_0
   - tqdm=4.66.5=py312h989b03a_0
@@ -481,6 +483,7 @@ dependencies:
   - unixodbc=2.3.11=h1a28f6b_0
   - urllib3=2.2.3=py312hca03da5_0
   - utf8proc=2.6.1=h80987f9_1
+  - uvicorn=0.32.0=pyh31011fe_1
   - w3lib=2.1.2=py312hca03da5_0
   - watchdog=4.0.1=py312h80987f9_0
   - wcwidth=0.2.5=pyhd3eb1b0_0
@@ -504,10 +507,31 @@ dependencies:
   - zfp=1.0.0=h313beb8_0
   - zict=3.0.0=py312hca03da5_0
   - zipp=3.17.0=py312hca03da5_0
-  - zlib=1.2.13=h18a0788_1
+  - zlib=1.2.13=hfb2fe0b_6
   - zlib-ng=2.0.7=h80987f9_0
   - zope=1.0=py312hca03da5_1
   - zope.interface=5.4.0=py312h80987f9_0
   - zstandard=0.23.0=py312h1a4646a_0
   - zstd=1.5.6=hfb09047_0
-prefix: /opt/homebrew/anaconda3
+  - pip:
+      - dpath==2.2.0
+      - jiter==0.7.0
+      - markdown==3.7
+      - marshmallow==3.23.1
+      - numexpr==2.10.1
+      - openai==1.53.0
+      - openfisca-core==43.2.2
+      - openfisk==0.1.0
+      - paramtools==0.18.3
+      - pendulum==3.0.0
+      - pluggy==1.5.0
+      - psutil==5.9.8
+      - pymdown-extensions==10.12
+      - pytest==8.3.3
+      - ruff==0.7.2
+      - starlette==0.41.2
+      - strenum==0.4.15
+      - taxcalc==4.3.1
+      - time-machine==2.16.0
+      - websockets==12.0
+prefix: /opt/anaconda3
