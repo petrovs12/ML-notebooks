@@ -5,6 +5,7 @@
 
 # General Approach:
  - Prefer Python code examples, especially in Jupyter Notebook cells.
+- for typescript, use the easiest and most popluar way possible
  - Use standard ML libraries (e.g., scikit-learn, TensorFlow, PyTorch, pandas, numpy, matplotlib, seaborn).
  - When suggesting model training code, provide small, self-contained examples.
  - When demonstrating theory, favor concise but clear explanations using inline comments.
