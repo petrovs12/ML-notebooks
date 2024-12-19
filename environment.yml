@@ -1,4 +1,4 @@
-name: ml-tutorials
+name: /opt/homebrew/anaconda3/envs/ml-tutorials
 channels:
   - defaults
   - conda-forge
@@ -120,11 +120,15 @@ dependencies:
       - graphql-core==3.2.5
       - graphql-relay==3.2.0
       - ipywidgets==8.1.5
+      - jax==0.4.38
+      - jaxlib==0.4.38
       - jupyterlab-widgets==3.0.13
       - libcst==1.5.1
       - marshmallow==3.23.1
       - marshmallow-enum==1.5.1
+      - ml-dtypes==0.5.0
       - mypy-extensions==1.0.0
+      - opt-einsum==3.4.0
       - pyre-check==0.9.23
       - pyre-extensions==0.0.32
       - pyyaml==6.0.2
