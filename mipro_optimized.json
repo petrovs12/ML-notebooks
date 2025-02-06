@@ -1,0 +1,73 @@
+{
+  "prog": {
+    "lm": null,
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "question": "Mark donates soup to the 6 homeless shelters.  Each one services 30 people and he decides to buy 10 cans of soup per person.  How many cans of soup does Mark donate?",
+        "reasoning": "Mark donates soup to 6 homeless shelters, and each shelter services 30 people. Therefore, the total number of people served by all shelters is 6 shelters * 30 people\/shelter = 180 people. Mark decides to buy 10 cans of soup per person, so the total number of cans of soup he donates is 180 people * 10 cans\/person = 1800 cans.",
+        "answer": "1800"
+      },
+      {
+        "augmented": true,
+        "question": "Bridget counted 14 shooting stars in the night sky.  Reginald counted two fewer shooting stars than did Bridget, but Sam counted four more shooting stars than did Reginald.  How many more shooting stars did Sam count in the night sky than was the average number of shooting stars observed for the three of them?",
+        "reasoning": "Bridget counted 14 shooting stars. Reginald counted two fewer, which is 14 - 2 = 12 shooting stars. Sam counted four more than Reginald, so he counted 12 + 4 = 16 shooting stars. To find the average number of shooting stars counted by the three, we add their counts: 14 + 12 + 16 = 42. The average is then 42 \/ 3 = 14. Now, we find how many more shooting stars Sam counted than the average: 16 - 14 = 2.",
+        "answer": "2"
+      },
+      {
+        "augmented": true,
+        "question": "Amaya scored 20 marks fewer in Maths than she scored in Arts. She also got 10 marks more in Social Studies than she got in Music. If she scored 70 in Music and scored 1\/10 less in Maths, what's the total number of marks she scored in all the subjects?",
+        "reasoning": "Let the score in Music be M, which is given as 70. The score in Maths (Ma) is 1\/10 less than in Music, so Ma = M - 7 = 70 - 7 = 63. Amaya scored 20 marks fewer in Maths than in Arts (A), so A = Ma + 20 = 63 + 20 = 83. In Social Studies (SS), she scored 10 marks more than in Music, so SS = M + 10 = 70 + 10 = 80. Now, we can calculate the total marks scored in all subjects: Total = Ma + A + M + SS = 63 + 83 + 70 + 80 = 296.",
+        "answer": "296"
+      },
+      {
+        "question": "Mary does her grocery shopping on Saturday. She does her shopping only at a specific store where she is allowed a credit of $100, which must be paid in full before her next shopping trip. That week she spent the full credit limit and paid $15 of it on Tuesday and $23 of it on Thursday. How much credit will Mary need to pay before her next shopping trip?",
+        "gold_reasoning": "So far, Mary has paid back $15 +$23=$<<15+23=38>>38 of the credit. So she still needs to pay $100-$38=$<<100-38=62>>62",
+        "answer": "62"
+      }
+    ],
+    "signature": {
+      "instructions": "Given the fields `question`, produce the fields `answer`.",
+      "fields": [
+        {
+          "prefix": "Question:",
+          "description": "${question}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Answer:",
+          "description": "${answer}"
+        }
+      ]
+    },
+    "extended_signature": {
+      "instructions": "You are a math tutor helping students solve real-world mathematical word problems. Given the field `question`, carefully analyze the problem, break it down into manageable steps, and produce the field `answer` with a clear explanation of your reasoning.",
+      "fields": [
+        {
+          "prefix": "Question:",
+          "description": "${question}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Answer:",
+          "description": "${answer}"
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.12.2",
+      "dspy": "2.5.43",
+      "cloudpickle": "3.1.1"
+    }
+  }
+}
