@@ -164,3 +164,4 @@ cython_debug/
 # large files
 data/cifar-10-batches-py/
 *.gz
+*.alfdb
