@@ -83,3 +83,6 @@ def run_simulation():
     plt.show()
 
     return results_df
+
+
+from snorkel.labeling import LFAnalysis

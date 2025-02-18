@@ -1,0 +1,27 @@
+[server]
+# Enable automatic reloading when files change
+runOnSave = true
+
+# Enable watchdog for faster file system monitoring
+fileWatcherType = "watchdog"
+
+# Enable auto-reload of browser tab
+enableCORS = false
+enableXsrfProtection = false
+
+[browser]
+# Automatically open the browser when the app starts
+serverAddress = "localhost"
+gatherUsageStats = false
+
+[theme]
+# Use a clean, modern theme
+primaryColor = "#FF4B4B"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F0F2F6"
+textColor = "#262730"
+font = "sans serif"
+
+[logger]
+# Show detailed logs during development
+level = "info" 
