@@ -47,7 +47,7 @@ def read_clipboard_data() -> pd.DataFrame:
         db_path = "./clipboard.alfdb"
         conn = sqlite3.connect(db_path)
 
-        query = "SELECT *, LENGTH(item) as content_length FROM clipboard WHERE app NOT LIKE '%code%' AND app NOT LIKE '%Code%'"
+        query = "SELECT *, LENGTH(item) as content_length FROM clipboard WHERE app NOT LIKE '%code%' AND app NOT LIKE '%Code%' and length(item)>50"
         df = pd.read_sql_query(query, conn)
         logger.info(f"Successfully read {len(df)} rows from database")
 

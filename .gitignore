@@ -168,3 +168,5 @@ data/cifar-10-batches-py/
 *.sqlite3
 *.sqlite
 *.bin
+clipboard_analysis/chroma_db/*
+clipboard_analysis/chroma_db/**/*

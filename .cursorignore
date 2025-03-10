@@ -170,3 +170,9 @@ data/cifar-10-batches-py/
 *.binary
 *.pickle
 .vscode/
+*.pickle
+*.bin
+
+
+clipboard_analysis/chroma_db/*
+clipboard_analysis/chroma_db/**/*

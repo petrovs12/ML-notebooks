@@ -3,9 +3,10 @@ import pandas as pd
 from clipboard_analyzer import read_clipboard_data, classify_text, classify_text_iterative
 from clipboard_embeddings import ClipboardEmbeddings
 import logging
-import datetime
 import os
 import dspy
+from langchain_elasticsearch import ElasticsearchStore, DenseVectorStrategy
+from langchain_core.documents import Document
 
 # Configure logging
 logging.basicConfig(
@@ -59,7 +60,6 @@ def configure_model():
     # Store configuration in session state
     if 'model_config' not in st.session_state:
         st.session_state.model_config = {}
-    
     st.session_state.model_config.update({
         'provider': provider,
         'model_name': model_name,
@@ -341,3 +341,135 @@ def initialize_embeddings(df: pd.DataFrame) -> ClipboardEmbeddings:
     except Exception as e:
         logger.error(f"Error in initialize_embeddings: {str(e)}")
         raise
+
+def initialize_elasticsearch_store(load_data=False):
+    """Initialize Elasticsearch store with hybrid search capability"""
+    from langchain_openai import OpenAIEmbeddings
+    embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
+
+    # Add password input in sidebar
+    es_password = st.sidebar.text_input(
+        "Elasticsearch Password",
+        type="password",
+        help="Enter your Elasticsearch password"
+    )
+
+    if not es_password:
+        st.sidebar.warning("Please enter Elasticsearch password")
+        return None
+
+    try:
+        es_store = ElasticsearchStore(
+            es_url="http://localhost:9200",
+            index_name="langchain_index",
+            embedding=embeddings,
+            es_user="elastic",  # Keep default user
+            es_password=es_password,  # Use password from input
+            strategy=DenseVectorStrategy(hybrid=True)
+        )
+        print('connected to elasticsearch')
+        
+        # Convert clipboard data to documents
+        if load_data:
+            documents = []
+            for ix, row in df.iterrows():
+                if ix % 100 == 0:
+                    print(f'processing row {ix} of {len(df)}')
+                if len(row['item']) > 50 and 'code' not in row['app'].lower():
+                    documents.append(
+                        Document(
+                            page_content=row['item'],
+                            metadata={
+                                "app": row['app'],
+                                "length": len(row['item']),
+                                "timestamp": row.get('timestamp', None)
+                            }
+                        )
+                    )
+        
+            # Add documents to Elasticsearch
+            if documents:
+                print(f'adding {len(documents)} to elasticsearch')
+                es_store.add_documents(documents)
+                logger.info(f"Added {len(documents)} documents to Elasticsearch")
+        
+        return es_store
+    except Exception as e:
+        logger.error(f"Error initializing Elasticsearch: {str(e)}")
+        st.error("Failed to initialize Elasticsearch store")
+        return None
+
+st.session_state.es_store = initialize_elasticsearch_store()
+# Add a button to initialize Elasticsearch
+if st.sidebar.button("Initialize Elasticsearch"):
+    with st.spinner("Initializing Elasticsearch store..."):
+        st.session_state.es_store = initialize_elasticsearch_store(load_data=True) 
+        if st.session_state.es_store:
+            st.success("Elasticsearch store initialized successfully!")
+
+# Add a new section for Elasticsearch hybrid search
+st.header("Hybrid Search")
+hybrid_query = st.text_input(
+    "Search clipboard content (hybrid search)",
+    help="Uses both semantic and keyword search"
+)
+
+if hybrid_query:
+    if 'es_store' not in st.session_state:
+        st.warning("Please initialize Elasticsearch first using the button in the sidebar")
+    elif st.session_state.es_store:
+        with st.spinner("Performing hybrid search..."):
+            # Perform hybrid search using LangChain's interface
+            results = st.session_state.es_store.search(
+                query=hybrid_query,
+                search_type="similarity",  # Enable hybrid search
+                k=10,  # Return top 10 results
+                filter=None,  # No additional filters
+                kwargs={
+                    "query": {
+                        "bool": {
+                            "should": [
+                                {
+                                    "multi_match": {
+                                        "query": hybrid_query,
+                                        "fields": [
+                                            "page_content^3",  # Boost exact content matches
+                                            "metadata.app^2"  # Consider app context
+                                        ],
+                                        "type": "best_fields",
+                                        "operator": "or",
+                                        "fuzziness": "AUTO"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "knn": {
+                        "k": 30,
+                        "num_candidates": 500
+                    },
+                    "hybrid_search": {
+                        "rank_fusion": {
+                            "rrf": {
+                                "window_size": 10,
+                                "rank_constant": 60
+                            }
+                        }
+                    }
+                }
+            )
+            st.subheader("Search Results")
+            for i, doc in enumerate(results, 1):
+                with st.expander(f"Result #{i} - {doc.page_content[:min(len(doc.page_content), 300)]}..."):
+                    st.text(f"App: {doc.metadata['app']}")
+                    st.text(f"Length: {doc.metadata['length']}")
+                    if doc.metadata.get('timestamp'):
+                        st.text(f"Timestamp: {doc.metadata['timestamp']}")
+                    st.markdown("**Content:**")
+                    if st.button("Copy Content", key=f"copy_button_{i}"):
+                        st.code(doc.page_content, language=None)
+                    st.text(doc.page_content)
+
+
+
+
