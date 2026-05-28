@@ -1,0 +1,99 @@
+\begin{thebibliography}{20}
+\newcommand{\enquote}[1]{``#1''}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[\protect\citeauthoryear{Agarwal, Kakade, Lee, and Mahajan}{Agarwal
+  et~al.}{2021}]{agarwal2021theory}
+\textsc{Agarwal, A., S.~M. Kakade, J.~D. Lee, and G.~Mahajan} (2021):
+  \enquote{On the theory of policy gradient methods: Optimality, approximation,
+  and distribution shift,} \emph{Journal of Machine Learning Research}, 22,
+  1--76.
+
+\bibitem[\protect\citeauthoryear{Aliprantis and Border}{Aliprantis and
+  Border}{2006}]{aliprantis2006infinite}
+\textsc{Aliprantis, C.~D. and K.~Border} (2006): \emph{Infinite Dimensional
+  Analysis: a hitchhiker's guide}, Springer.
+
+\bibitem[\protect\citeauthoryear{Aliprantis and Burkinshaw}{Aliprantis and
+  Burkinshaw}{1998}]{aliprantis1998principles}
+\textsc{Aliprantis, C.~D. and O.~Burkinshaw} (1998): \emph{Principles of real
+  analysis}, Gulf Professional Publishing.
+
+\bibitem[\protect\citeauthoryear{Beck}{Beck}{2017}]{beck2017first}
+\textsc{Beck, A.} (2017): \emph{First-order methods in optimization}, SIAM.
+
+\bibitem[\protect\citeauthoryear{Bertsekas}{Bertsekas}{2012}]{bertsekas2012dynamic}
+\textsc{Bertsekas, D.} (2012): \emph{Dynamic programming and optimal control:
+  Volume I}, vol.~4, Athena scientific.
+
+\bibitem[\protect\citeauthoryear{Bertsekas and Shreve}{Bertsekas and
+  Shreve}{1996}]{bertsekas1996stochastic}
+\textsc{Bertsekas, D. and S.~E. Shreve} (1996): \emph{Stochastic optimal
+  control: the discrete-time case}, vol.~5, Athena Scientific.
+
+\bibitem[\protect\citeauthoryear{Bertsekas and Tsitsiklis}{Bertsekas and
+  Tsitsiklis}{1996}]{bertsekas1996neuro}
+\textsc{Bertsekas, D. and J.~N. Tsitsiklis} (1996): \emph{Neuro-dynamic
+  programming}, Athena Scientific.
+
+\bibitem[\protect\citeauthoryear{Bhandari and Russo}{Bhandari and
+  Russo}{2024}]{bhandari2024global}
+\textsc{Bhandari, J. and D.~Russo} (2024): \enquote{Global optimality
+  guarantees for policy gradient methods,} \emph{Operations Research}.
+
+\bibitem[\protect\citeauthoryear{Blackwell}{Blackwell}{1965}]{blackwell1965discounted}
+\textsc{Blackwell, D.} (1965): \enquote{Discounted dynamic programming,}
+  \emph{The Annals of Mathematical Statistics}, 36, 226--235.
+
+\bibitem[\protect\citeauthoryear{Dudley}{Dudley}{2018}]{dudley2018real}
+\textsc{Dudley, R.~M.} (2018): \emph{Real analysis and probability}, Chapman
+  and Hall/CRC.
+
+\bibitem[\protect\citeauthoryear{Hopenhayn and Prescott}{Hopenhayn and
+  Prescott}{1992}]{hopenhayn1992}
+\textsc{Hopenhayn, H.~A. and E.~C. Prescott} (1992): \enquote{Stochastic
+  Monotonicity and Stationary Distributions for Dynamic Economies,}
+  \emph{Econometrica}, 1387--1406.
+
+\bibitem[\protect\citeauthoryear{Light}{Light}{2021}]{light2021stochastic}
+\textsc{Light, B.} (2021): \enquote{Stochastic Comparative Statics in Markov
+  Decision Processes,} \emph{Mathematics of Operations Research}, 46, 797--810.
+
+\bibitem[\protect\citeauthoryear{Light}{Light}{2024}]{light2024principle}
+---\hspace{-.1pt}---\hspace{-.1pt}--- (2024): \enquote{The Principle of
+  Optimality in Dynamic Programming: A Pedagogical Note,} \emph{Operations
+  Research Letters}, 107164.
+
+\bibitem[\protect\citeauthoryear{Lovejoy}{Lovejoy}{1987}]{lovejoy1987ordered}
+\textsc{Lovejoy, W.~S.} (1987): \enquote{Ordered solutions for dynamic
+  programs,} \emph{Mathematics of Operations Research}, 12, 269--276.
+
+\bibitem[\protect\citeauthoryear{Maitra}{Maitra}{1968}]{maitra1968discounted}
+\textsc{Maitra, A.} (1968): \enquote{Discounted dynamic programming on compact
+  metric spaces,} \emph{Sankhy{\=a}: The Indian Journal of Statistics, Series
+  A}, 211--216.
+
+\bibitem[\protect\citeauthoryear{Savage}{Savage}{1965}]{savage1965gamble}
+\textsc{Savage, L. D.~L.} (1965): \enquote{How to gamble if you must,}
+  \emph{McGraw-Hill}.
+
+\bibitem[\protect\citeauthoryear{Sutton and Barto}{Sutton and
+  Barto}{2018}]{sutton2018reinforcement}
+\textsc{Sutton, R.~S. and A.~G. Barto} (2018): \emph{Reinforcement learning: An
+  introduction}.
+
+\bibitem[\protect\citeauthoryear{Tang, Agrawal, and Faenza}{Tang
+  et~al.}{2020}]{tang2020reinforcement}
+\textsc{Tang, Y., S.~Agrawal, and Y.~Faenza} (2020): \enquote{Reinforcement
+  learning for integer programming: Learning to cut,} in \emph{International
+  conference on machine learning}, PMLR, 9367--9376.
+
+\bibitem[\protect\citeauthoryear{Topkis}{Topkis}{1978}]{topkis1978minimizing}
+\textsc{Topkis, D.~M.} (1978): \enquote{Minimizing a submodular function on a
+  lattice,} \emph{Operations research}, 26, 305--321.
+
+\bibitem[\protect\citeauthoryear{Topkis}{Topkis}{1998}]{topkis1998supermodularity}
+---\hspace{-.1pt}---\hspace{-.1pt}--- (1998): \emph{Supermodularity and
+  complementarity}, Princeton university press.
+
+\end{thebibliography}
